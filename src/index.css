@@ -1,0 +1,402 @@
+/* ========== RESET ========== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+html,
+body {
+  background: #f9f9fb; /* samakan dengan halaman */
+}
+
+
+/* ========== NAVBAR ========== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 72px;
+
+  padding: 0 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(10px);
+
+  z-index: 1000;
+}
+
+/* kiri */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid white;
+}
+
+.nav-title {
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* menu */
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  margin: 0 14px;
+  font-size: 0.9rem;
+}
+
+
+/* ================= HERO ================= */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.hero-bg.show {
+  opacity: 1;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-overlay h1 {
+  font-size: 2.6rem;
+}
+
+.hero-overlay p {
+  margin-top: 8px;
+  font-size: 1.1rem;
+}
+
+/* dots */
+.hero-dots {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 3;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 6px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: white;
+  transform: scale(1.3);
+}
+
+/* ================= PROFIL ================= */
+.profil {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 120px 80px;
+
+  display: flex;
+  align-items: center;
+  gap: 60px;
+
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1s ease;
+}
+
+.profil.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.profil-content {
+  flex: 1;
+}
+
+.profil-content h2 {
+  font-size: 2.6rem;
+  color: #2b2f77;
+  margin: 10px 0 20px;
+}
+
+.profil-content p {
+  line-height: 1.8;
+  color: #444;
+  max-width: 520px;
+}
+
+.profil-image {
+  flex: 1;
+}
+
+.profil-image img {
+  width: 100%;
+  max-width: 420px;
+  height: 520px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 16px;
+}
+
+/* ================= PROFIL PAROKI ================= */
+.profil {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 120px 80px;
+
+  display: flex;
+  align-items: center;
+  gap: 60px;
+
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1s ease;
+}
+
+.profil.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.profil-content {
+  flex: 1;
+}
+
+.profil-content h2 {
+  font-size: 2.6rem;
+  color: #2b2f77;
+  margin: 10px 0 20px;
+}
+
+.profil-content p {
+  line-height: 1.8;
+  color: #444;
+  max-width: 520px;
+}
+
+.profil-image {
+  flex: 1;
+}
+
+.profil-image img {
+  width: 100%;
+  max-width: 420px;
+  height: 520px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 16px;
+}
+/* ================= JADWAL MISA ================= */
+.jadwal {
+  min-height: 70vh;
+  padding: 120px 20px;
+  text-align: center;
+  background: #f9f9fb;
+}
+
+.jadwal-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #2b2f77;
+}
+
+.jadwal-subtitle {
+  margin-top: 6px;
+  font-size: 1rem;
+  color: #666;
+}
+
+.jadwal-card {
+  max-width: 600px; /* diperlebar supaya muat 3 kolom */
+  margin: 40px auto;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.jadwal-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.5fr; /* kolom keterangan lebih lebar */
+  padding: 18px 24px;
+  font-size: 1rem;
+  align-items: center;
+  text-align: left; /* rata kiri biar sejajar */
+}
+
+.jadwal-row span:nth-child(2) {
+  text-align: center; /* waktu rata tengah */
+}
+
+.jadwal-row.header {
+  background: #2b2f77;
+  color: white;
+  font-weight: 600;
+}
+
+.jadwal-row:not(.header) {
+  border-top: 1px solid #eee;
+}
+
+.jadwal-row:nth-child(even):not(.header) {
+  background: #f7f7fb; /* zebra effect */
+}
+
+.jadwal-note {
+  margin-top: 30px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* ================= SOCIAL NAV (NAVBAR) ================= */
+.social-nav {
+  display: flex;
+  gap: 22px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.social-nav li a {
+  width: 42px;
+  height: 42px;
+  background-color: #fff;
+
+  text-align: center;
+  line-height: 42px;
+  font-size: 18px;
+
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+
+  border: 2px solid #fff;
+}
+
+.social-nav li a .icon {
+  position: relative;
+  color: #262626;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+.social-nav li a:hover .icon {
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+.social-nav li a::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.social-nav li a:hover::before {
+  top: 0;
+}
+
+/* WARNA SESUAI SOSMED */
+.social-nav li.instagram a::before {
+  background: #ff0e77;
+}
+
+.social-nav li.facebook a::before {
+  background: #3b5999;
+}
+
+.social-nav li.youtube a::before {
+  background: #ff1414;
+}
+/* ================= PAGE SLIDE TRANSITION (LAYERED OVERLAY) ================= */
+.page-wrapper {
+  position: relative;
+  animation-duration: 0.7s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-fill-mode: both;
+  will-change: transform;
+  z-index: 10; /* halaman baru di atas */
+}
+
+/* masuk dari kanan (ditarik dari kanan, menimpa) */
+.slide-right {
+  animation-name: slideOverFromRight;
+}
+
+/* masuk dari kiri (ditarik dari kiri, menimpa) */
+.slide-left {
+  animation-name: slideOverFromLeft;
+}
+
+@keyframes slideOverFromRight {
+  from {
+    transform: translateX(100%); /* mulai di luar layar kanan */
+    box-shadow: -20px 0 40px rgba(0, 0, 0, 0.3); /* shadow saat geser */
+  }
+  to {
+    transform: translateX(0); /* menimpa halaman lama */
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes slideOverFromLeft {
+  from {
+    transform: translateX(-100%); /* mulai di luar layar kiri */
+    box-shadow: 20px 0 40px rgba(0, 0, 0, 0.3); /* shadow saat geser */
+  }
+  to {
+    transform: translateX(0); /* menimpa halaman lama */
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
