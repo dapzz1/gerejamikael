@@ -13,7 +13,7 @@ export default function Navbar() {
       {/* menu */}
       <div className="nav-menu">
         <Link to="/">Beranda</Link>
-        <Link to="/jadwal-misa">Jadwal Misa</Link>
+        <Link to="/jadwal-misa">Jadwal Sholat</Link>
         <Link to="/tentang">Tentang</Link>
       </div>
 
