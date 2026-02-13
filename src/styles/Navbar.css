@@ -1,0 +1,113 @@
+/* ========== NAVBAR ========== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 72px;
+
+  padding: 0 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(10px);
+
+  z-index: 1000;
+}
+
+/* kiri */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid white;
+}
+
+.nav-title {
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* menu */
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  margin: 0 14px;
+  font-size: 0.9rem;
+}
+
+/* ================= SOCIAL NAV (NAVBAR) ================= */
+.social-nav {
+  display: flex;
+  gap: 22px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.social-nav li a {
+  width: 42px;
+  height: 42px;
+  background-color: #fff;
+
+  text-align: center;
+  line-height: 42px;
+  font-size: 18px;
+
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+
+  border: 2px solid #fff;
+}
+
+.social-nav li a .icon {
+  position: relative;
+  color: #262626;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+.social-nav li a:hover .icon {
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+.social-nav li a::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.social-nav li a:hover::before {
+  top: 0;
+}
+
+/* WARNA SESUAI SOSMED */
+.social-nav li.instagram a::before {
+  background: #ff0e77;
+}
+
+.social-nav li.facebook a::before {
+  background: #3b5999;
+}
+
+.social-nav li.youtube a::before {
+  background: #ff1414;
+}

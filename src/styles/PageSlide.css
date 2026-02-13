@@ -1,0 +1,41 @@
+/* ================= PAGE SLIDE TRANSITION (LAYERED OVERLAY) ================= */
+.page-wrapper {
+  position: relative;
+  animation-duration: 0.7s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-fill-mode: both;
+  will-change: transform;
+  z-index: 10; /* halaman baru di atas */
+}
+
+/* masuk dari kanan (ditarik dari kanan, menimpa) */
+.slide-right {
+  animation-name: slideOverFromRight;
+}
+
+/* masuk dari kiri (ditarik dari kiri, menimpa) */
+.slide-left {
+  animation-name: slideOverFromLeft;
+}
+
+@keyframes slideOverFromRight {
+  from {
+    transform: translateX(100%); /* mulai di luar layar kanan */
+    box-shadow: -20px 0 40px rgba(0, 0, 0, 0.3); /* shadow saat geser */
+  }
+  to {
+    transform: translateX(0); /* menimpa halaman lama */
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes slideOverFromLeft {
+  from {
+    transform: translateX(-100%); /* mulai di luar layar kiri */
+    box-shadow: 20px 0 40px rgba(0, 0, 0, 0.3); /* shadow saat geser */
+  }
+  to {
+    transform: translateX(0); /* menimpa halaman lama */
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+}

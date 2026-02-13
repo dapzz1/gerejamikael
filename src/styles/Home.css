@@ -1,0 +1,117 @@
+/* ================= PROFIL ================= */
+.profil {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 120px 80px;
+
+  display: flex;
+  align-items: center;
+  gap: 60px;
+
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1s ease;
+}
+
+.profil.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.profil-content {
+  flex: 1;
+}
+
+.profil-content h2 {
+  font-size: 2.6rem;
+  color: #2b2f77;
+  margin: 10px 0 20px;
+}
+
+.profil-content p {
+  line-height: 1.8;
+  color: #444;
+  max-width: 520px;
+}
+
+.profil-image {
+  flex: 1;
+}
+
+.profil-image img {
+  width: 100%;
+  max-width: 420px;
+  height: 520px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 16px;
+}
+
+/* ================= PROFIL PAROKI ================= */
+.profil {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 120px 80px;
+
+  display: flex;
+  align-items: center;
+  gap: 60px;
+
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1s ease;
+}
+
+.profil.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.profil-content {
+  flex: 1;
+}
+
+.profil-content h2 {
+  font-size: 2.6rem;
+  color: #2b2f77;
+  margin: 10px 0 20px;
+}
+
+.profil-content p {
+  line-height: 1.8;
+  color: #444;
+  max-width: 520px;
+}
+
+.profil-image {
+  flex: 1;
+}
+
+.profil-image img {
+  width: 100%;
+  max-width: 420px;
+  height: 520px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 16px;
+}
+/* ================= LOKASI ================= */
+.lokasi {
+  padding: 100px 20px;
+  text-align: center;
+  background: #f9f9fb;
+}
+
+.lokasi-title {
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+  color: #2b2f77;
+}
+
+.map-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
