@@ -9,22 +9,21 @@ const images = [hero1, hero2, hero3];
 export default function Home() {
   const [active, setActive] = useState(0);
   const [showProfil, setShowProfil] = useState(false);
+  const [showLokasi, setShowLokasi] = useState(false);
 
   // HERO AUTO SLIDE
   useEffect(() => {
     const timer = setInterval(() => {
       setActive((prev) => (prev + 1) % images.length);
     }, 5000);
-
     return () => clearInterval(timer);
   }, []);
 
-  // ANIMASI PROFIL SAAT SCROLL
+  // SCROLL ANIMATION
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 300) {
-        setShowProfil(true);
-      }
+      if (window.scrollY > 300) setShowProfil(true);
+      if (window.scrollY > 300) setShowLokasi(true);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -59,7 +58,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ================= PROFIL PAROKI ================= */}
+      {/* ================= PROFIL ================= */}
       <section className={`profil ${showProfil ? "show" : ""}`}>
         <div className="profil-content">
           <small>Sekilas Tentang Kami</small>
@@ -78,22 +77,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ================= LOKASI MAP ================= */}
-      <section className="lokasi">
+      {/* ================= LOKASI ================= */}
+      <section className={`lokasi ${showLokasi ? "show" : ""}`}>
         <h2 className="lokasi-title">Lokasi Gereja</h2>
 
         <div className="map-container">
-         <iframe
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.5170045990008!2d112.54101597934681!3d-7.518446173141704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e780beba8fcf05b%3A0x42a574d788b8109e!2sGereja%20Katolik%20Stasi%20Santo%20Mikael%2C%20Mojosari%20(Paroki%20Santa%20Monika%2C%20Krian)!5e0!3m2!1sid!2sid!4v1770967822779!5m2!1sid!2sid"
-  width="100%"
-  height="450"
-  style={{ border: 0 }}
-  allowFullScreen
-  loading="lazy"
-  referrerPolicy="no-referrer-when-downgrade"
-  title="Lokasi Gereja"
-></iframe>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.5170045990008!2d112.54101597934681!3d-7.518446173141704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e780beba8fcf05b%3A0x42a574d788b8109e!2sGereja%20Katolik%20Stasi%20Santo%20Mikael%2C%20Mojosari%20(Paroki%20Santa%20Monika%2C%20Krian)!5e0!3m2!1sid!2sid!4v1770967822779!5m2!1sid!2sid"
+            width="100%"
+            height="450"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Lokasi Gereja"
+          ></iframe>
+        </div>
 
+        <div className="map-button-wrapper">
+          <a
+            href="https://maps.google.com/?q=Gereja+Katolik+Stasi+Santo+Mikael+Mojosari"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="map-button"
+          >
+            📍 Buka di Google Maps
+          </a>
         </div>
       </section>
     </>
