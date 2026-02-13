@@ -111,3 +111,62 @@
 .social-nav li.youtube a::before {
   background: #ff1414;
 }
+.nav-menu {
+  display: flex;
+  gap: 30px;
+}
+
+.desktop-social {
+  display: flex;
+}
+
+.mobile-social {
+  display: none;
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  transition: 0.3s;
+}
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.95);
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+
+    transform: translateY(-200%);
+    transition: 0.4s ease;
+  }
+
+  .nav-menu.open {
+    transform: translateY(0);
+  }
+
+  .desktop-social {
+    display: none;
+  }
+
+  .mobile-social {
+    display: flex;
+    margin-top: 20px;
+    gap: 20px;
+  }
+}

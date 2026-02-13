@@ -94,3 +94,57 @@
   background: #1d215e;
   transform: translateY(-3px);
 }
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  /* HERO */
+  .hero {
+    height: 80vh;
+  }
+
+  .hero-overlay h1 {
+    font-size: 2rem;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .hero-overlay p {
+    font-size: 1rem;
+    padding: 0 20px;
+  }
+
+  /* PROFIL */
+  .profil {
+    flex-direction: column;
+    padding: 80px 20px;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .profil-content p {
+    max-width: 100%;
+  }
+
+  .profil-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* LOKASI */
+  .lokasi {
+    padding: 80px 20px;
+  }
+
+  .lokasi-title {
+    font-size: 2rem;
+  }
+
+  .map-container iframe {
+    height: 300px;
+  }
+
+  .map-button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
